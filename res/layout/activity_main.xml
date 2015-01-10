@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/selectwave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Wave" />
+
+    <Spinner
+        android:id="@+id/Osversions"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/selectwave" />
+
+    <SeekBar
+        android:id="@+id/changeTipSeekBar"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/voltage"
+        android:layout_alignRight="@+id/Osversions"
+        android:progress="15" />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/Osversions"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/Osversions"
+        android:layout_marginTop="18dp"
+        android:text="Set Duration" />
+
+    <EditText
+        android:id="@+id/etfrequency"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etduration"
+        android:layout_alignTop="@+id/frequency"
+        android:ems="10"
+        android:hint="in Hz"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etduration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/duration"
+        android:layout_toRightOf="@+id/duration"
+        android:ems="10"
+        android:hint="in Seconds"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/frequency"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/duration"
+        android:layout_below="@+id/etduration"
+        android:layout_marginTop="14dp"
+        android:text="Set Frequency" />
+
+    <TextView
+        android:id="@+id/voltage"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/etfrequency"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/changeTipSeekBar"
+        android:text="Set Voltage" />
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/mySimpleXYPlot"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_above="@+id/button1"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/changeTipSeekBar"
+        android:layout_below="@+id/changeTipSeekBar"
+        androidPlot.graphWidget.gridLinePaint.color="#000000"
+        androidPlot.graphWidget.marginBottom="25dp"
+        androidPlot.graphWidget.marginLeft="15dp"
+        androidPlot.graphWidget.marginRight="10dp"
+        androidPlot.graphWidget.marginTop="20dp"
+        androidPlot.legendWidget.heightMetric.value="25dp"
+        androidPlot.legendWidget.iconSizeMetrics.heightMetric.value="15dp"
+        androidPlot.legendWidget.iconSizeMetrics.widthMetric.value="15dp"
+        androidPlot.legendWidget.positionMetrics.anchor="right_bottom"
+        androidPlot.rangeLabel="Range"
+        androidPlot.title="Waveform"
+        androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size" />
+ />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/voltage"
+        android:layout_alignParentBottom="true"
+        android:text="Play Tone" />
+
+</RelativeLayout>
